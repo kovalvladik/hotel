@@ -24,16 +24,16 @@ const useValidation = (value, validations) => {
 
     useEffect(()=>{
         for (const validation in validations){
-            switch (validations){
-                case 'minLength':
-                    value.length < validations[validations] ?setMinLengthError(true):setMinLengthError(false)
+            switch (validation){
+                case 'minLengthError':
+                    value.length < validations[validation] ?setMinLengthError(true):setMinLengthError(false)
                     break
                 case 'isEmpty':
-                    value ? setIsEmpty(false) : setIsEmpty(true)
+                    value.length>0 ? setIsEmpty(false) : setIsEmpty(true)
                     break
                 case 'passError':
                     const regexp = /^[a-z\s]+$/i;
-                    regexp.test(String(value).toLowerCase()) ? setPassError(true) : setPassError(false)
+                    regexp.test(String(value).toLowerCase()) ? setPassError(false) : setPassError(true)
                     break
                 case 'emailError':
                     const reg = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
@@ -45,6 +45,7 @@ const useValidation = (value, validations) => {
 
     useEffect(()=>{
         if(isEmpty || minLengthError || emailError || passError){
+
             setInputValid(false)
         }else {
             setInputValid(true)
@@ -96,7 +97,7 @@ export default function Login({ setToken }) {
 
 
 
-    const email = useInput('', {isEmpty:true,emailError:true })
+    const email = useInput('', {isEmpty:true, emailError:true })
     const pass = useInput('',{isEmpty:true,passError:true,minLengthError:8 })
 
     const handleChangePass = (e) => {
@@ -109,6 +110,10 @@ export default function Login({ setToken }) {
         email.onChange(e)
 
     }
+    console.log(email)
+    console.log(pass)
+
+
 
 
     return(
@@ -117,6 +122,8 @@ export default function Login({ setToken }) {
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Username</p>
+                    {(email.isDirty && email.isEmpty) && <div style={{color:'red'}}>  пустое</div>}
+                    {(email.isDirty && email.emailError) && <div style={{color:'red'}}>  корявый</div>}
                     <input type="text" onChange={e => handleChangeEmail(e)} />
                 </label>
                 <label>
