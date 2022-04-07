@@ -13,7 +13,7 @@ const AuthWindow = () => {
       setEmail(e.target.value)
     }
     const handlePass = (e) => {
-      setEmail(e.target.value)
+        setPass(e.target.value)
     }
     console.log(email)
     console.log(pass)
