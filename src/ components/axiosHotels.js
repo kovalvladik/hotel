@@ -4,8 +4,10 @@ async function axiosHotels(args) {
 
     const results = await instance.get(``, {
         params: {
-
-
+            query:'moscow',
+            lang:'ru',
+            lookFor: 'both',
+            limit:'2'
         }
     })
     const data  = results.data.results

@@ -22,8 +22,11 @@ const Item = () => {
 
     return (
         <div>
-            <Carusel/>
-
+            {state?.hotels.map((items)=>(
+                <div>
+                    {items.label}
+                </div>
+            ))}
         </div>
     );
 };
