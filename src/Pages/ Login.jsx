@@ -91,6 +91,7 @@ export default function Login({ setToken }) {
             username,
             password
         });
+        console.log(setToken)
         setToken(token);
     }
 
@@ -122,13 +123,16 @@ export default function Login({ setToken }) {
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Username</p>
-                    {(email.isDirty && email.isEmpty) && <div style={{color:'red'}}>  пустое</div>}
-                    {(email.isDirty && email.emailError) && <div style={{color:'red'}}>  корявый</div>}
+
                     <input type="text" onChange={e => handleChangeEmail(e)} />
+                    {email.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
+                    { email.emailError ? <div style={{color:'red'}}>  корявый</div>:null}
                 </label>
                 <label>
                     <p>Password</p>
                     <input type="password" onChange={e => handleChangePass(e)} />
+                    {pass.isDirty && pass.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
+                    { pass.passError ? <div style={{color:'red'}}>  корявый</div>:null}
                 </label>
                 <div>
                     <button disabled={!email.inputValid||!pass.inputValid} type="submit">Submit</button>
