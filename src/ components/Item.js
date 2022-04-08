@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axiosHotels from "./axiosHotels";
+import Carusel from "./Carusel";
+
 
 const Item = () => {
 
@@ -8,18 +10,19 @@ const Item = () => {
   async  function getData() {
         const data = await axiosHotels()
       setState(data)
-      console.log(state.resolve())
     }
 
 
     useEffect( ()=>{
         getData()
     },[])
-    console.log(state)
+
+
 
 
     return (
         <div>
+            <Carusel/>
 
         </div>
     );
