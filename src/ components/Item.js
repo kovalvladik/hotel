@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axiosHotels from "./axiosHotels";
 import Carusel from "./Carusel";
+import DatePick from "./DatePick";
 
 
 const Item = () => {
@@ -27,6 +28,7 @@ const Item = () => {
                     {items.label}
                 </div>
             ))}
+            <DatePick/>
         </div>
     );
 };
