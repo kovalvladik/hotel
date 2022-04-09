@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 
 export default function useToken() {
     const getToken = () => {
@@ -6,6 +6,8 @@ export default function useToken() {
         const userToken = JSON.parse(tokenString);
         return userToken?.token
     };
+
+
 
     const [token, setToken] = useState(getToken());
 
