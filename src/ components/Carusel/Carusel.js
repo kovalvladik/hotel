@@ -7,19 +7,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import './Carusel.css'
 
-// import "./styles.css";
-import { Pagination } from "swiper";
-
 export default function Carusel() {
     return (
         <>
             <Swiper
-                slidesPerView={3.3}
+                slidesPerView={3.7}
                 spaceBetween={5}
-                // pagination={{
-                //     clickable: true,
-                // }}
-                // modules={[Pagination]}
                 className="mySwiper"
             >
                 <SwiperSlide className='slide1'></SwiperSlide>
@@ -30,7 +23,6 @@ export default function Carusel() {
                 <SwiperSlide className='slide2'></SwiperSlide>
                 <SwiperSlide className='slide3'></SwiperSlide>
                 <SwiperSlide className='slide4'></SwiperSlide>
-
             </Swiper>
         </>
     );

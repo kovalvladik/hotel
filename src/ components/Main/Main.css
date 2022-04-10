@@ -5,8 +5,47 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
     border-radius: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 .main_carusel_container{
     height: 150px;
-    width: 584px;
+    width: 650px;
 }
+.main_text__container  {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.main__name{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: #424242;
+}
+.main__date{
+    /*font-family: 'Roboto', sans-serif;*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #41522E;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.main__liked-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    color: #424242;
+}
+
+

@@ -2,7 +2,7 @@
 .data_pick__container{
     max-width: 360px;
     max-height: 410px;
-    height: 410px;
+    height: 380px;
     background: #FFFFFF;
     box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
     border-radius: 16px;
@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: space-between;
         padding-left: 32px;
+padding-bottom: 30px;
+    margin-bottom: 32px;
 }
 .data_pick__name{
     font-family: 'Roboto', sans-serif;
@@ -17,12 +19,12 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
-    align-items: center;
     color: #424242;
+    margin: 7px 0px;
 }
 .data_pick__input{
     width: 296px;
+    min-height: 50px;
     height: 50px;
     background: #FFFFFF;
     border: 1px solid #C9CACC;

@@ -1,7 +1,11 @@
 .login-container{
     width: 100%;
     height: 100vh;
-    background:  url('../../public/IMG_20210312_140957_174 1.jpg') no-repeat;
+    background:  url('../../public/IMG_20210312_140957_174 1.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
