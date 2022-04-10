@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
+import './Login.css'
 
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
@@ -111,34 +112,37 @@ export default function Login({ setToken }) {
         email.onChange(e)
 
     }
-    console.log(email)
-    console.log(pass)
+    // console.log(email)
+    // console.log(pass)
 
 
 
 
     return(
-        <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
+        <div className='login-container'>
+            <div className="login-wrapper">
+                <h1 className='login-wrapper__label'>Simple Hotel Check</h1>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <p className='login-wrapper__name'>Логин</p>
 
-                    <input type="text" onChange={e => handleChangeEmail(e)} />
-                    {email.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
-                    { email.emailError ? <div style={{color:'red'}}>  корявый</div>:null}
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => handleChangePass(e)} />
-                    {pass.isDirty && pass.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
-                    { pass.passError ? <div style={{color:'red'}}>  корявый</div>:null}
-                </label>
-                <div>
-                    <button disabled={!email.inputValid||!pass.inputValid} type="submit">Submit</button>
-                </div>
-            </form>
+                        <input className='login-wrapper__input' type="text" onChange={e => handleChangeEmail(e)} />
+                        {email.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
+                        { email.emailError ? <div style={{color:'red'}}>  корявый</div>:null}
+                    </label>
+                    <label>
+                        <p className='login-wrapper__name'>Пароль</p>
+                        <input className='login-wrapper__input' type="password" onChange={e => handleChangePass(e)} />
+                        {pass.isDirty && pass.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
+                        { pass.passError ? <div style={{color:'red'}}>  корявый</div>:null}
+                    </label>
+                    <div>
+                        <button className='login-wrapper__btn' disabled={!email.inputValid||!pass.inputValid} type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
     )
 }
 

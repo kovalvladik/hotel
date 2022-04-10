@@ -1,0 +1,82 @@
+.login-container{
+    width: 100%;
+    height: 100vh;
+    background:  url('../../public/IMG_20210312_140957_174 1.jpg') no-repeat;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper{
+    width: 409px;
+    height: 382px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login-wrapper__label{
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+
+    color: #424242;
+
+}
+.login-wrapper__name{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #424242;
+}
+
+.login-wrapper__input{
+    width: 345px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #C9CACC;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.login-wrapper__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    width: 345px;
+    height: 50px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)),
+    linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login-wrapper__btn:hover{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)),
+    linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+.login-wrapper__btn:disabled{
+    background: linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+
