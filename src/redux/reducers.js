@@ -22,6 +22,9 @@ export const LIKED = "LIKED"
 export const DELETE_LIKE = "DELETE_LIKE"
 export const UPDATE_DATE = "UPDATE_DATE"
 export const DAYS = "DAYS"
+export const CITY = "CITY"
+export const UPDATE_CATALOG = "UPDATE_CATALOG"
+
 
 
 const reducer = (state = defaultState, action) => {
@@ -34,26 +37,35 @@ const reducer = (state = defaultState, action) => {
         case LIKED:
             return {
                 ...state,
-                like: [...state.like,...state.catalog.filter(el=>el.id===action.payload)]
+                like: [ ...state.like,...state.catalog.filter(el=>el.id==action.payload)]
             }
         case DELETE_LIKE:
             return {
                 ...state,
-                like: [...state.like,...state.catalog.filter(el=>el.id!==action.payload)]
-
+                like:state.like.filter(el=>el.id!==action.payload)
             }
         case UPDATE_DATE:
             return {
                 ...state,
 
-                month: action.payload.month,
-                day: action.payload.day,
-                year: action.payload.year
+                month: action.payload.month1,
+                day: action.payload.day1,
+                year: action.payload.year1
             }
         case DAYS:
             return {
                 ...state,
                 days: action.payload
+            }
+        case CITY:
+            return {
+                ...state,
+                city: action.payload
+            }
+        case UPDATE_CATALOG:
+            return {
+                ...state,
+                catalog: action.payload
             }
 
         default:
@@ -68,3 +80,5 @@ export const liked = (payload) =>({type:LIKED,payload})
 export const deleteLike = (payload) =>({type:DELETE_LIKE,payload})
 export const updateDate = (payload) =>({type:UPDATE_DATE,payload})
 export const updateDays = (payload) =>({type:DAYS,payload})
+export const updateCity = (payload) =>({type:CITY,payload})
+export const updateCatalog = (payload) =>({type:UPDATE_CATALOG,payload})

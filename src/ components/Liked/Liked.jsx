@@ -15,7 +15,7 @@ const Liked = () => {
         <div className='liked__container'>
             <p className='liked__name'>Избранное</p>
             {likes.map((el)=>(
-                <div>{el.label}</div>
+                <div>{el?.label}</div>
                 // <div className='item__container'>
                 //     <div className='item_icon__container'>
                 //         <HomeIcon fontSize='large'/>

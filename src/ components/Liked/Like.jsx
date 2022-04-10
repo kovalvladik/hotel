@@ -6,10 +6,18 @@ import './Like.css'
 
 
 
-export default function IconCheckboxes({setIsLiked,isLiked}) {
+export default function IconCheckboxes({setIsLiked,id,rr}) {
+
+    const handleChange = (event) => {
+        setIsLiked(event.target.checked);
+        rr(id)
+    };
+
     return (
         <div className='icon__container'>
-            <Checkbox style={{lineHeight:0,margin:0}} icon={<FavoriteBorder  />} checkedIcon={<Favorite style={{color:'red'}} />} />
+            <Checkbox
+                onChange={handleChange}
+                style={{lineHeight:0,margin:0}} icon={<FavoriteBorder  />} checkedIcon={<Favorite style={{color:'red'}} />} />
 
         </div>
     );

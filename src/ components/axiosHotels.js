@@ -7,7 +7,7 @@ async function axiosHotels(args) {
             query:'moscow',
             lang:'ru',
             lookFor: 'both',
-            limit:'10'
+            limit:'10 '
         }
     })
     const data  = results.data.results

@@ -7,10 +7,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import IconCheckboxes from "../Liked/Like";
 import './Item.css'
 import {useDispatch, useSelector} from "react-redux";
+import {deleteLike, liked} from "../../redux/reducers";
 
 
 
-const Item = ({price,rating,label}) => {
+const Item = ({price,rating,label,id}) => {
 
     const [isLiked,setIsLiked] = useState(false)
 
@@ -27,6 +28,25 @@ const Item = ({price,rating,label}) => {
     //     console.log('111')
     // }, [])
 
+    const like = useSelector(state => state.like)
+    const catalog = useSelector(state => state.catalog)
+
+
+
+    const rr = () => {
+        if (isLiked===true){
+            dispatch(deleteLike(id))
+            console.log(id)
+
+        }else {
+
+            dispatch(liked(id))
+        }
+        console.log(catalog.filter(el=>el.id!==id))
+        console.log(catalog.forEach(el=>el.id==id))
+        console.log( catalog[catalog.forEach(el=>Number(el.id)===Number(id))])
+
+    }
     const montheUpdate = () => {
         const  yearMonth =['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',]
 
@@ -36,18 +56,9 @@ const Item = ({price,rating,label}) => {
         montheUpdate()
     },[month])
 
-    const character = useSelector(state => state.singleCharacter)
+    // const character = useSelector(state => state.singleCharacter)
 
-        useEffect(()=>{
-            if (isLiked===true){
-                dispatch({type:'LIKED',args:price})
-                console.log(isLiked,price)
-            }else {
-                dispatch({type:'DELETE_LIKE',args:price})
 
-            }
-
-        },[isLiked])
 
     return (
         <div className='item__container'>
@@ -64,7 +75,7 @@ const Item = ({price,rating,label}) => {
             </div>
 
             <div className='item_price_container'>
-                <IconCheckboxes style={{paddingLeft:'100px'}} setIsLiked={setIsLiked} isLiked={isLiked}/>
+                <IconCheckboxes style={{paddingLeft:'100px'}} setIsLiked={setIsLiked} rr={rr}id={id} />
                 <p className='login-wrapper__name'> Price: {price} ₽</p>
             </div>
 
