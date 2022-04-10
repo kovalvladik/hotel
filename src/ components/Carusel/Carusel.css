@@ -29,3 +29,16 @@
   height: 100%;
   object-fit: cover;
 }
+
+.slide1{
+  background-image: url("../../../public/Rectangle 23.jpg");
+}
+.slide2{
+  background-image: url("../../../public/Rectangle 24.jpg");
+}
+.slide3{
+  background-image: url("../../../public/Rectangle 28.jpg");
+}
+.slide4{
+  background-image: url("../../../public/Rectangle 23.jpg");
+}
