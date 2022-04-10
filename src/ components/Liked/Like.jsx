@@ -4,12 +4,13 @@ import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+// const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function IconCheckboxes() {
+export default function IconCheckboxes({setIsLiked,isLiked}) {
+    console.log(setIsLiked)
     return (
         <div>
-            <Checkbox {...label} icon={<FavoriteBorder  />} checkedIcon={<Favorite style={{color:'red'}} />} />
+            <Checkbox icon={<FavoriteBorder  />} checkedIcon={<Favorite style={{color:'red'}} />} />
 
         </div>
     );

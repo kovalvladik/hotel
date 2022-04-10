@@ -19,9 +19,13 @@ const SearchPage = ({setToken}) => {
         <div className='page_container'>
             <button onClick={( )=>handleExit()}>  выход</button>
             main
-            <DatePick/>
-            <Liked/>
-            <Main/>
+            <div className='page_left'>
+                <DatePick/>
+                <Liked/>
+            </div>
+            <div className='page_right'>
+                <Main/>
+            </div>
         </div>
     );
 };

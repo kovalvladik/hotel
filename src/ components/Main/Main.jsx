@@ -8,7 +8,10 @@ const Main = () => {
         <div className='main__container'>
             <p className='liked__name'>Избранное</p>
             <p className='liked__name'>Избранное</p>
-            <Carusel/>
+            <div className='main_carusel_container'>
+                <Carusel/>
+            </div>
+
             <p className='liked__name'>Избранное</p>
             <ItemList/>
 

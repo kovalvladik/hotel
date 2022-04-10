@@ -13,6 +13,8 @@ const defaultState = {
 
 export const GET_CATALOG = "GET_CATALOG"
 export const FETCH_CATALOG = "FETCH_CATALOG"
+export const LIKED = "LIKED"
+export const DELETE_LIKE = "DELETE_LIKE"
 
 
 const reducer = (state = defaultState, action) => {
@@ -21,6 +23,17 @@ const reducer = (state = defaultState, action) => {
             return {
                 ...state,
                 catalog: action.payload
+            }
+        case LIKED:
+            return {
+                ...state,
+                like: [...state.like,...state.catalog.filter(el=>el.id===action.payload)]
+            }
+        case DELETE_LIKE:
+            return {
+                ...state,
+                like: [...state.like,...state.catalog.filter(el=>el.id!==action.payload)]
+
             }
 
         default:

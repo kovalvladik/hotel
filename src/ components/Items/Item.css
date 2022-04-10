@@ -1,0 +1,27 @@
+.item__container{
+
+    width: 580px;
+    height: 120px;
+    border: 1px solid black;
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-around ;
+}
+.item_icon__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(65, 82, 46, 0.05);
+    border-radius: 32px;
+}
+.item_name__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.item_price_container{
+    display: flex;
+    flex-direction: column;
+}
