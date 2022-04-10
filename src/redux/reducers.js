@@ -1,6 +1,11 @@
 
 const defaultState = {
     catalog:[],
+    city: 'moscow',
+    date: Date.now(),
+    days: 1,
+    like:[],
+    liked: 0,
     email: null,
 
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import axiosHotels from "../ components/axiosHotels";
 import Item from "../ components/Items/Item";
 import './SearchPage.css'
+import Liked from "../ components/Liked/Liked";
+import Main from "../ components/Main/Main";
 
 const SearchPage = ({setToken}) => {
 
@@ -17,6 +19,8 @@ const SearchPage = ({setToken}) => {
             <button onClick={( )=>handleExit()}>  выход</button>
             main
             <Item/>
+            <Liked/>
+            <Main/>
         </div>
     );
 };
