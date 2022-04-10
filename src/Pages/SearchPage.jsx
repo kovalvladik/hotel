@@ -4,6 +4,7 @@ import Item from "../ components/Items/Item";
 import './SearchPage.css'
 import Liked from "../ components/Liked/Liked";
 import Main from "../ components/Main/Main";
+import DatePick from "../ components/DataPick/DatePick";
 
 const SearchPage = ({setToken}) => {
 
@@ -18,7 +19,7 @@ const SearchPage = ({setToken}) => {
         <div className='page_container'>
             <button onClick={( )=>handleExit()}>  выход</button>
             main
-            <Item/>
+            <DatePick/>
             <Liked/>
             <Main/>
         </div>
