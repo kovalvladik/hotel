@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import axiosHotels from "./axiosHotels";
-import Carusel from "./Carusel";
-import DatePick from "./DatePick";
+import axiosHotels from "../axiosHotels";
+import Carusel from "../Carusel/Carusel";
+import DatePick from "../DataPick/DatePick";
 
 
 const Item = () => {

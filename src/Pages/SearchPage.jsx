@@ -1,6 +1,6 @@
 import React from 'react';
 import axiosHotels from "../ components/axiosHotels";
-import Item from "../ components/Item";
+import Item from "../ components/Items/Item";
 import './SearchPage.css'
 
 const SearchPage = ({setToken}) => {
