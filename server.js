@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 
 app.use('/', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.send({
         token: 'test123'
     });

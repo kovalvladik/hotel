@@ -2,7 +2,7 @@
   "name": "hotels",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kovalvladik.github.io/ hotel",
+  "homepage": "https://kovalvladik.github.io/hotel",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@emotion/react": "^11.9.0",
