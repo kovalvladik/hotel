@@ -1,6 +1,6 @@
 import {put,call,takeEvery} from 'redux-saga/effects'
 // import {API_URL} from "../../config";
-import {FETCH_CATALOG, getCatalog} from "../reducers";
+import {FETCH_CATALOG, getCatalog} from "../reducers.js";
 
 const fetchCategoryFromApi = () => fetch( 'categories.php' )
 

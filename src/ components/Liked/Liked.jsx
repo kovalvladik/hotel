@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './Licked.css'
-import SelectVariants from "./Selected";
+import SelectVariants from "./Selected.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import BasicRating from "./Rating";
-import IconCheckboxes from "./Like";
-import {deleteLike, updateLikedItems, updateLikes} from "../../redux/reducers";
+import BasicRating from "./Rating.jsx";
+import IconCheckboxes from "./Like.jsx";
+import {deleteLike, updateLikedItems, updateLikes} from "../../redux/reducers.js";
 
 const Liked = () => {
     const likes = useSelector(state => state.like)

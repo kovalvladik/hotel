@@ -1,9 +1,8 @@
 import './App.css';
 import {Route, Routes, Link, Redirect} from "react-router-dom";
-import SearchPage from "./Pages/SearchPage";
+import SearchPage from "./Pages/SearchPage.jsx";
 import useToken from "./hooks/use-token";
-import Login from "./Pages/ Login";
-import {useEffect, useState} from "react";
+import Login from "./Pages/ Login.jsx";
 
 function App() {
 

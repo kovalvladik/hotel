@@ -1,4 +1,4 @@
-import {instance} from "../axios";
+import {instance} from "../axios.js";
 
 async function axiosHotels(city) {
 

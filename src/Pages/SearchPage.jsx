@@ -1,10 +1,9 @@
 import React from 'react';
-import axiosHotels from "../ components/axiosHotels";
-import Item from "../ components/Items/Item";
+import axiosHotels from "../ components/axiosHotels.js";
 import './SearchPage.css'
-import Liked from "../ components/Liked/Liked";
-import Main from "../ components/Main/Main";
-import DatePick from "../ components/DataPick/DatePick";
+import Liked from "../ components/Liked/Liked.jsx";
+import Main from "../ components/Main/Main.jsx";
+import DatePick from "../ components/DataPick/DatePick.jsx";
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const SearchPage = ({setToken}) => {

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Item from "./Item";
+import Item from "./Item.jsx";
 import axiosHotels from "../axiosHotels";
 import './ItemList.css'
 import {useDispatch, useSelector} from "react-redux";
-import {getCatalog} from "../../redux/reducers";
+import {getCatalog} from "../../redux/reducers.js";
 
 const ItemList = () => {
     const [state, setState] = useState(null)

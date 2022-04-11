@@ -4,7 +4,7 @@ import './DataPick.css'
 
 import "react-datepicker/dist/react-datepicker.css";
 import {useDispatch, useSelector} from "react-redux";
-import {updateCity, updateDate, updateDays} from "../../redux/reducers";
+import {updateCity, updateDate, updateDays} from "../../redux/reducers.js";
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';

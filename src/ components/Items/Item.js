@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import axiosHotels from "../axiosHotels";
-import Carusel from "../Carusel/Carusel";
-import DatePick from "../DataPick/DatePick";
-import BasicRating from "../Liked/Rating";
+import BasicRating from "../Liked/Rating.jsx";
 import HomeIcon from '@mui/icons-material/Home';
-import IconCheckboxes from "../Liked/Like";
+import IconCheckboxes from "../Liked/Like.jsx";
 import './Item.css'
 import {useDispatch, useSelector} from "react-redux";
-import {deleteLike, liked, updateLikedItems} from "../../redux/reducers";
+import {deleteLike, liked, updateLikedItems} from "../../redux/reducers.js";
 
 
 

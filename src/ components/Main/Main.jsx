@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Main.css'
-import Carusel from "../Carusel/Carusel";
-import ItemList from "../Items/ItemList";
+import Carusel from "../Carusel/Carusel.js";
+import ItemList from "../Items/ItemList.jsx";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {useDispatch, useSelector} from "react-redux";
 
