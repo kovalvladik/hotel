@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Item from "./Item.jsx";
+import Item from "./Item.js";
 import axiosHotels from "../axiosHotels";
 import './ItemList.css'
 import {useDispatch, useSelector} from "react-redux";
