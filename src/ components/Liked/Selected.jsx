@@ -3,13 +3,25 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import {useEffect} from "react";
 
-export default function SelectVariants() {
+export default function SelectVariants({handleSortScore,handleSortPrice,likes}) {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+
+    console.log(age)
+
+    useEffect(()=>{
+        if (Number(age)==10){
+            handleSortScore(likes)
+        }else if (Number(age)===20){
+            handleSortPrice(likes)
+        }
+
+    },[age])
 
     return (
         <div>

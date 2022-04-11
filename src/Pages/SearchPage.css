@@ -16,3 +16,50 @@
     flex-direction: column;
 
 }
+.btn__container{
+    background-color:#E5E5E5 ;
+    display: flex;
+    top: 0;
+    align-items: start;
+    justify-content: space-between;
+
+    flex-direction: row;
+    padding-left: 32px;
+}
+.exit__container{
+    display: flex;
+    flex-direction: row;
+    padding-right: 32px;
+}
+.btn{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.btn__text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.408px;
+
+    color: #41522E;
+}
+
+.lable__text{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: #424242;
+
+}

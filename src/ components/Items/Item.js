@@ -7,7 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import IconCheckboxes from "../Liked/Like";
 import './Item.css'
 import {useDispatch, useSelector} from "react-redux";
-import {deleteLike, liked} from "../../redux/reducers";
+import {deleteLike, liked, updateLikedItems} from "../../redux/reducers";
 
 
 
@@ -28,7 +28,6 @@ const Item = ({price,rating,label,id}) => {
     //     console.log('111')
     // }, [])
 
-    const like = useSelector(state => state.like)
     const catalog = useSelector(state => state.catalog)
 
 
@@ -36,16 +35,14 @@ const Item = ({price,rating,label,id}) => {
     const rr = () => {
         if (isLiked===true){
             dispatch(deleteLike(id))
-            console.log(id)
+            dispatch(updateLikedItems())
 
         }else {
 
             dispatch(liked(id))
-        }
-        console.log(catalog.filter(el=>el.id!==id))
-        console.log(catalog.forEach(el=>el.id==id))
-        console.log( catalog[catalog.forEach(el=>Number(el.id)===Number(id))])
+            dispatch(updateLikedItems())
 
+        }
     }
     const montheUpdate = () => {
         const  yearMonth =['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',]
@@ -75,7 +72,7 @@ const Item = ({price,rating,label,id}) => {
             </div>
 
             <div className='item_price_container'>
-                <IconCheckboxes style={{paddingLeft:'100px'}} setIsLiked={setIsLiked} rr={rr}id={id} />
+                <IconCheckboxes style={{paddingLeft:'100px'}} setIsLiked={setIsLiked} isLiked={isLiked} rr={rr}id={id} />
                 <p className='login-wrapper__name'> Price: {price} ₽</p>
             </div>
 

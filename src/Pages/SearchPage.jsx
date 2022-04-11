@@ -5,6 +5,7 @@ import './SearchPage.css'
 import Liked from "../ components/Liked/Liked";
 import Main from "../ components/Main/Main";
 import DatePick from "../ components/DataPick/DatePick";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const SearchPage = ({setToken}) => {
 
@@ -16,17 +17,26 @@ const SearchPage = ({setToken}) => {
 
     }
     return (
-        <div className='page_container'>
-            <button onClick={( )=>handleExit()}>  выход</button>
-            main
-            <div className='page_left'>
-                <DatePick/>
-                <Liked/>
+        <>
+            <div className='btn__container'>
+                <p className='lable__text'>Simple Hotel Check </p>
+                <div className='exit__container'>
+                    <p className='btn__text'>Выйти </p>
+                    <button className='btn' onClick={( )=>handleExit()}>   <LogoutIcon/></button>
+                </div>
+
             </div>
-            <div className='page_right'>
-                <Main/>
+            <div className='page_container'>
+                <div className='page_left'>
+                    <DatePick/>
+                    <Liked/>
+                </div>
+                <div className='page_right'>
+                    <Main/>
+                </div>
             </div>
-        </div>
+        </>
+
     );
 };
 

@@ -3,7 +3,7 @@
 let today = new Date();
 const defaultState = {
     catalog:[],
-    city: 'moscow',
+    city: 'Москва',
     year: today.getFullYear(),
     month: today.getMonth(),
     day: today.getDate(),
@@ -24,6 +24,8 @@ export const UPDATE_DATE = "UPDATE_DATE"
 export const DAYS = "DAYS"
 export const CITY = "CITY"
 export const UPDATE_CATALOG = "UPDATE_CATALOG"
+export const UPDATE_LIKED_ITEMS = "UPDATE_LIKED_ITEMS"
+export const UPDATE_LIKES = "UPDATE_LIKES"
 
 
 
@@ -37,12 +39,13 @@ const reducer = (state = defaultState, action) => {
         case LIKED:
             return {
                 ...state,
-                like: [ ...state.like,...state.catalog.filter(el=>el.id==action.payload)]
+                like: [ ...state.like,...state.catalog.filter(el=>el.id==action.payload)],
             }
         case DELETE_LIKE:
             return {
                 ...state,
-                like:state.like.filter(el=>el.id!==action.payload)
+                like:state.like.filter(el=>el.id!==action.payload),
+
             }
         case UPDATE_DATE:
             return {
@@ -67,6 +70,17 @@ const reducer = (state = defaultState, action) => {
                 ...state,
                 catalog: action.payload
             }
+        case UPDATE_LIKED_ITEMS:
+            return {
+                ...state,
+                liked: state.like.length
+
+            }
+        case UPDATE_LIKES:
+            return {
+                ...state,
+                like: action.payload
+            }
 
         default:
             return state
@@ -82,3 +96,5 @@ export const updateDate = (payload) =>({type:UPDATE_DATE,payload})
 export const updateDays = (payload) =>({type:DAYS,payload})
 export const updateCity = (payload) =>({type:CITY,payload})
 export const updateCatalog = (payload) =>({type:UPDATE_CATALOG,payload})
+export const updateLikedItems = () =>({type:UPDATE_LIKED_ITEMS})
+export const updateLikes = (payload) =>({type:UPDATE_LIKES,payload})
