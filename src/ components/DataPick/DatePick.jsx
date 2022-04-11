@@ -13,20 +13,6 @@ const DatePick = () => {
 
     const dispatch = useDispatch()
 
-    const days = useSelector(state => state.days)
-    const city = useSelector(state => state.city)
-    const year = useSelector(state => state.year)
-    const month = useSelector(state => state.month)
-    const day = useSelector(state => state.day)
-
-    console.log(year)
-    console.log(month)
-    console.log(day)
-
-    const enteredDays = useSelector(state => state.enteredDays)
-
-    // dispatch({type:'LIKED',args:price})
-
     const cityHandler = () => {
         dispatch(updateCity(cityText))
 
@@ -37,24 +23,6 @@ const DatePick = () => {
     const [daysText, setDaysText] = useState(1);
     const [cityText, setCityText] = useState('Москва' );
 
-    //
-    // useEffect(()=>{
-    //     const day1 = startDate?.getDate()
-    //     const month1 = startDate?.getMonth()
-    //     const year1 = startDate?.getFullYear()
-    //     dispatch(updateDate({day1, month1, year1}))
-    //
-    //
-    //     // dispatch({type:'UPDATE_DATE',args:{day1,month1,year1}})
-    //
-    //
-    // },[startDate])
-
-    // useEffect(()=>{
-    //     // dispatch({type:'DAYS',args:Number(daysText)})
-    //     dispatch(updateDays(daysText))
-    //
-    // },[daysText])
 
     const allUpdate = () => {
         cityHandler()
@@ -66,11 +34,6 @@ const DatePick = () => {
 
     }
 
-
-
-
-
-    console.log(startDate.getDate())
     return (
         <div className='data_pick__container'>
             <p className='data_pick__name'> Локация</p>

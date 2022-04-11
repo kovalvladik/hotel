@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import './Licked.css'
 import SelectVariants from "./Selected";
-import Like from "./Like";
 import {useDispatch, useSelector} from "react-redux";
-import HomeIcon from "@mui/icons-material/Home";
 import BasicRating from "./Rating";
 import IconCheckboxes from "./Like";
-import {deleteLike, liked, updateLikedItems, updateLikes} from "../../redux/reducers";
+import {deleteLike, updateLikedItems, updateLikes} from "../../redux/reducers";
 
 const Liked = () => {
     const likes = useSelector(state => state.like)
@@ -24,18 +22,8 @@ const Liked = () => {
         }
     }
 
-    console.log(likes)
-
-
-
-
     const handleSortScore = (likes) => {
       const arr = likes
-        // arr.map((el)=> el.id)
-        // console.log( arr.map((el)=> Number(el.id)))
-        // arr.sort(function(a, b) {
-        //         return a.id - b.id;
-        //     });
        arr.sort(function(a, b) {
           return Number(a._score) - Number(b._score);
       })
@@ -50,8 +38,6 @@ const Liked = () => {
       })
         dispatch(updateLikes(arr2))
     }
-
-
 
     return (
         <div className='liked__container'>

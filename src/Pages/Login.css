@@ -53,6 +53,10 @@
     box-sizing: border-box;
     border-radius: 4px;
 }
+.login-wrapper__input::placeholder{
+    color: red;
+}
+
 .login-wrapper__btn{
     display: flex;
     flex-direction: row;
@@ -82,5 +86,8 @@
 }
 .login-wrapper__btn:disabled{
     background: linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+.btn_containet{
+    margin-top: 15px;
 }
 

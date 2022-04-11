@@ -3,7 +3,7 @@
 let today = new Date();
 const defaultState = {
     catalog:[],
-    city: 'Москва',
+    city: 'moscow',
     year: today.getFullYear(),
     month: today.getMonth(),
     day: today.getDate(),

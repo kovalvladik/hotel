@@ -3,35 +3,24 @@ import Item from "./Item";
 import axiosHotels from "../axiosHotels";
 import './ItemList.css'
 import {useDispatch, useSelector} from "react-redux";
-import {getCatalog, updateCatalog} from "../../redux/reducers";
+import {getCatalog} from "../../redux/reducers";
 
 const ItemList = () => {
     const [state, setState] = useState(null)
     const dispatch = useDispatch()
+    const city = useSelector(state => state.city)
 
-    const catalog = useSelector(state => state.catalog)
-
-
-    async  function getData() {
-        const data = await axiosHotels()
+    async  function getData(city) {
+        const data = await axiosHotels(city)
         // dispatch(getCatalog([data?.hotels?.forEach((el)=>el.liked = false)]))
         dispatch(getCatalog(data.hotels))
         setState([...data.hotels])
     }
 
-
-    // const state = useSelector(state => state.catalog)
-
-
-
-
     useEffect( ()=>{
-        getData()
+        getData(city)
 
-    },[])
-    console.log(state)
-
-
+    },[city])
 
     return (
         <div>

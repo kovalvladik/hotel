@@ -16,7 +16,6 @@ const Main = () => {
     const month = useSelector(state => state.month)
     const year = useSelector(state => state.year)
     const liked = useSelector(state => state.liked)
-    const dispatch = useDispatch()
 
 
     const montheUpdate = () => {
@@ -28,7 +27,6 @@ const Main = () => {
         montheUpdate()
     },[month])
 
-    console.log(day)
     return (
         <div className='main__container'>
              <div className='main_text__container'>

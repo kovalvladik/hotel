@@ -124,19 +124,19 @@ export default function Login({ setToken }) {
                 <h1 className='login-wrapper__label'>Simple Hotel Check</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        <p className='login-wrapper__name'>Логин</p>
+                        <p style={email.emailError ?{color:'red'}:null} className='login-wrapper__name'>Логин</p>
 
-                        <input className='login-wrapper__input' type="text" onChange={e => handleChangeEmail(e)} />
-                        {email.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
-                        { email.emailError ? <div style={{color:'red'}}>  корявый</div>:null}
+                        <input placeholder={email.emailError ?'login@mail.com':null} className='login-wrapper__input' type="text" onChange={e => handleChangeEmail(e)} />
+                        {/*{email.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}*/}
+                        { email.emailError ? <div style={{color:'red'}}  className='login-wrapper__name'> Некорректый  Email</div>:null}
                     </label>
                     <label>
-                        <p className='login-wrapper__name'>Пароль</p>
-                        <input className='login-wrapper__input' type="password" onChange={e => handleChangePass(e)} />
-                        {pass.isDirty && pass.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}
-                        { pass.passError ? <div style={{color:'red'}}>  корявый</div>:null}
+                        <p style={pass.passError ?{color:'red'}:null}  className='login-wrapper__name'>Пароль</p>
+                        <input className='login-wrapper__input' type="password"  onChange={e => handleChangePass(e)} />
+                        {/*{pass.isDirty && pass.isEmpty?<div style={{color:'red'}}>  пустое</div>:null}*/}
+                        { pass.passError ? <div style={{color:'red'}}  className='login-wrapper__name'>  Пароль должен быть длиннее 8 символов</div>:null}
                     </label>
-                    <div>
+                    <div className='btn_containet'>
                         <button className='login-wrapper__btn' disabled={!email.inputValid||!pass.inputValid} type="submit">Submit</button>
                     </div>
                 </form>

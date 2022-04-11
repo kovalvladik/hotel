@@ -1,10 +1,10 @@
 import {instance} from "../axios";
 
-async function axiosHotels(args) {
+async function axiosHotels(city) {
 
     const results = await instance.get(``, {
         params: {
-            query:'moscow',
+            query:city,
             lang:'ru',
             lookFor: 'both',
             limit:'10 '
@@ -13,7 +13,6 @@ async function axiosHotels(args) {
     const data  = results.data.results
     // console.log(results.data.results)
 
-    console.log(data)
     return data
 }
 
