@@ -16,9 +16,10 @@ function App() {
 
   return (
       <>
-          <Routes >
+          {!token?<Login  setToken={setToken} />:<Routes >
               <Route path="/" element={<SearchPage setToken={setToken} />}/>
-          </Routes>
+          </Routes>}
+
       </>
 
   );
